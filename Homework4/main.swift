@@ -61,3 +61,27 @@ if (a, b) == (nil, nil) {
 } else {
     print("số nhỏ nhất trong mảng là \(a!), số lớn nhất là \(b!)")
 }
+
+
+//Bài 3
+print("Bài 3: Viết một minigame random các số từ 1 đến 100, cho người dùng đoán số nhập dữ liệu từ bàn phím.")
+if let input = readLine() {
+    if let intInput = Int(input) {
+        print("giá trị bạn nhập là: \(intInput)")
+        func miniGame (input: Int) {
+            let lucky = Int.random(in: 1...100)
+            print("con số may mắn là: \(lucky)")
+            if input == lucky {
+                print("chúc mừng")
+            } else if input < lucky {
+                print("nhỏ quá")
+            } else {
+                print("lớn quá")
+            }
+        }
+        miniGame(input: intInput)
+    } else {
+        print("giá trị không hợp lệ")
+    }
+}
+
